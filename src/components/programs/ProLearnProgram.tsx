@@ -109,8 +109,8 @@ const ProLearnProgram: React.FC = () => {
           <h2>Ready to Learn from the Experts?</h2>
           <p>Join thousands of learners who are advancing their careers with expert-led education.</p>
           <div className="cta-buttons">
-            <a href="/apply" className="btn btn-primary">Apply Now</a>
-            <a href="/contact" className="btn btn-secondary">Contact Us</a>
+            <button className="btn btn-primary" onClick={() => window.location.href = '/apply'}>Apply Now</button>
+            <button className="btn btn-secondary" onClick={() => window.location.href = '/contact'}>Contact Us</button>
           </div>
         </div>
       </div>

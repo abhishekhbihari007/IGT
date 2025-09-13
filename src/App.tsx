@@ -5524,7 +5524,7 @@ const ProgramCard = ({ course }: { course: Course }) => {
                 </div>
                 <div className="program-card-buttons">
                     <button className="btn btn-details" onClick={handleDetailsClick}>Details</button>
-                                            <a href="/apply" className="btn btn-apply ag-btn-apply">Apply</a>
+                    <button className="btn btn-apply ag-btn-apply" onClick={() => window.location.href = '/apply'}>Apply</button>
                 </div>
             </div>
         </div>
@@ -5659,7 +5659,7 @@ const AdmissionsPage = () => {
                             <div className="process-number">1</div>
                             <h3>Application</h3>
                             <p>Submit your online application along with required documents through our portal.</p>
-                            <a href="/apply" className="process-btn">Apply Now →</a>
+                            <button className="process-btn" onClick={() => window.location.href = '/apply'}>Apply Now →</button>
                         </div>
                         <div className="process-card">
                             <div className="process-number">2</div>

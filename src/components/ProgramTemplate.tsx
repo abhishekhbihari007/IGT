@@ -146,9 +146,9 @@ const ProgramTemplate: React.FC<ProgramTemplateProps> = ({ programData }) => {
           <div className="apply-content">
             <h2>Ready to Start Your Journey?</h2>
             <p>Join our program and transform your career</p>
-            <a href="/apply" className="apply-button">
+            <button className="apply-button" onClick={() => window.location.href = '/apply'}>
               Apply Now
-            </a>
+            </button>
           </div>
         </div>
       </section>

@@ -274,7 +274,7 @@
 .program-template .career-card,
 .program-template .career-card:hover {
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  border-left: none !important;
+  border-left: 4px solid #D32F2F !important; /* Keep the green left border */
   border-right: none !important;
   border-top: none !important;
   border-bottom: none !important;
@@ -285,7 +285,7 @@
 .program-template .area-card,
 .program-template .area-card:hover {
   border: 2px solid transparent !important;
-  border-left: none !important;
+  border-left: 4px solid #D32F2F !important; /* Keep the green left border */
   border-right: none !important;
   border-top: none !important;
   border-bottom: none !important;

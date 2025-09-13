@@ -38,11 +38,12 @@ import AIArtsProgram from './programs/AIArtsProgram';
 import ARVRXRDevelopmentProgram from './programs/ARVRXRDevelopmentProgram';
 import VirtualAugmentedRealityEngineeringProgram from './programs/VirtualAugmentedRealityEngineeringProgram';
 import AIManagementCertificateProgram from './programs/AIManagementCertificateProgram';
-import ARVRTechnologyProgram from './programs/ARVRTechnologyProgram';
+// import ARVRTechnologyProgram from './programs/ARVRTechnologyProgram'; // Removed - using external link
 import PrecisionAgricultureProgram from './programs/PrecisionAgricultureProgram';
 import AIManagementStudiesProgram from './programs/AIManagementStudiesProgram';
 import DoctoralPrograms from './programs/DoctoralPrograms';
 import PostdoctoralPrograms from './programs/PostdoctoralPrograms';
+// import ProLearnProgram from './programs/ProLearnProgram'; // Removed - using external link
 
 const ProgramRouter: React.FC = () => {
   const { programSlug } = useParams<{ programSlug: string }>();
@@ -97,11 +98,14 @@ const ProgramRouter: React.FC = () => {
     
     // Homepage Specific Programs
     'ai-management-certificate': AIManagementCertificateProgram,
-    'ar-vr-technology': ARVRTechnologyProgram,
+    // 'ar-vr-technology': ARVRTechnologyProgram, // Removed - using external link
     
     // Doctoral & Postdoctoral Programs
     'doctoral-programs': DoctoralPrograms,
     'postdoctoral-programs': PostdoctoralPrograms,
+    
+    // ProLearn Program - using external link
+    // 'prolearn': ProLearnProgram,
     
     // Additional consolidated mappings
     'game-development': GameDevelopmentProgram,

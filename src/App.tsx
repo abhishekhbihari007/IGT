@@ -5374,6 +5374,7 @@ const ProgramCard = ({ course }: { course: Course }) => {
     const navigate = useNavigate();
     
     const handleDetailsClick = () => {
+        console.log('Detail button clicked for course:', course.title);
         
         // Map homepage program titles to their corresponding program slugs
         const programSlugMap: { [key: string]: string } = {
@@ -5434,6 +5435,8 @@ const ProgramCard = ({ course }: { course: Course }) => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-')
             .replace(/^-|-$/g, '');
+        
+        console.log('Navigating to:', `/program/${programSlug}`);
         
         try {
             navigate(`/program/${programSlug}`, { state: { program: course } });
@@ -6005,7 +6008,16 @@ const AcademicPrograms = () => {
                     <div className="program-content">
                         <h4>EU ACC Master Program in AR & VR Technology</h4>
                         <p>Explore the Future of Immersive Technology through advanced augmented and virtual reality applications. Develop skills in 3D modeling, spatial computing, and interactive design.</p>
-                        <button className="btn btn-details" onClick={() => navigate('/program/ar-vr-technology')}>Details</button>
+                        <button className="btn btn-details" onClick={() => {
+                            const returnUrl = encodeURIComponent(window.location.origin);
+                            const newWindow = window.open(`https://igt-red.vercel.app/?return=${returnUrl}`, '_blank');
+                            
+                            // Store reference for potential back navigation
+                            if (newWindow) {
+                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
+                                sessionStorage.setItem('externalWindow', 'ar-vr-tech');
+                            }
+                        }}>Details</button>
                         <div className="program-info">
                             <div className="info-item">
                                 <i className="fas fa-building"></i>
@@ -6014,6 +6026,41 @@ const AcademicPrograms = () => {
                             <div className="info-item">
                                 <i className="fas fa-hands-helping"></i>
                                 <span>10+ Hands-on Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* ProLearn Program Card */}
+                <div className="program-card">
+                    <div className="program-visual">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="ProLearn" />
+                    </div>
+                    <div className="program-content">
+                        <h4>ProLearn</h4>
+                        <p>Learn from the Subject Matter Experts. Connect with subject matter experts and academics in cutting-edge fields. <strong>Gain practical knowledge</strong> through hands-on demonstrations and real-world exercises.</p>
+                        <button className="btn btn-details" onClick={() => {
+                            const returnUrl = encodeURIComponent(window.location.origin);
+                            const newWindow = window.open(`https://prolearn.org.in/?return=${returnUrl}`, '_blank');
+                            
+                            // Store reference for potential back navigation
+                            if (newWindow) {
+                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
+                                sessionStorage.setItem('externalWindow', 'prolearn');
+                            }
+                        }}>Details</button>
+                        <div className="program-info">
+                            <div className="info-item">
+                                <i className="fas fa-users"></i>
+                                <span>10,000+ Active Learners</span>
+                            </div>
+                            <div className="info-item">
+                                <i className="fas fa-book"></i>
+                                <span>100+ Expert Courses</span>
+                            </div>
+                            <div className="info-item">
+                                <i className="fas fa-award"></i>
+                                <span>95% Success Rate</span>
                             </div>
                         </div>
                     </div>
@@ -6593,6 +6640,35 @@ const Layout = () => {
     // Effect to scroll to top when navigating to a new page
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, [location.pathname]);
+    
+    // Handle back navigation from external sites
+    useEffect(() => {
+        const handleReturnFromExternal = () => {
+            const returnUrl = sessionStorage.getItem('igtReturnUrl');
+            const externalWindow = sessionStorage.getItem('externalWindow');
+            
+            if (returnUrl && externalWindow) {
+                // Clear the stored data
+                sessionStorage.removeItem('igtReturnUrl');
+                sessionStorage.removeItem('externalWindow');
+                
+                // If we're on the homepage and came back from external site, ensure we're on home
+                if (location.pathname === '/') {
+                    // Force a small scroll to indicate return
+                    setTimeout(() => {
+                        window.scrollTo(0, 0);
+                    }, 100);
+                }
+            }
+        };
+        
+        // Listen for focus events (when user returns to tab)
+        window.addEventListener('focus', handleReturnFromExternal);
+        
+        return () => {
+            window.removeEventListener('focus', handleReturnFromExternal);
+        };
     }, [location.pathname]);
 
     return (

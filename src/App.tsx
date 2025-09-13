@@ -510,6 +510,7 @@ const GlobalStyles = () => (
         overflow: hidden;
         transition: all 0.3s ease;
         border: none;
+        border-left: 4px solid #D32F2F;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -557,16 +558,55 @@ const GlobalStyles = () => (
         .features-grid {
             grid-template-columns: 1fr;
             max-width: 100%;
-            padding: 0 20px;
+            padding: 0 15px;
             gap: 20px;
+        }
+        
+        .feature-item {
+            margin: 0;
+            border-radius: 12px;
         }
         
         .feature-item img {
             height: 180px;
+            border-radius: 12px 12px 0 0;
         }
         
         .feature-content {
             padding: 20px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .features-grid {
+            padding: 0 10px;
+            gap: 15px;
+        }
+        
+        .feature-item img {
+            height: 160px;
+        }
+        
+        .feature-content {
+            padding: 15px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.2rem;
+        }
+        
+        .feature-content p {
+            font-size: 0.9rem;
         }
     }
 
@@ -3506,7 +3546,7 @@ const GlobalStyles = () => (
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 100px;
+            top: 80px;
             left: 0;
             width: 100%;
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
@@ -3516,6 +3556,7 @@ const GlobalStyles = () => (
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255,255,255,0.2);
             border-top: none;
+            z-index: 1000;
         }
         .header nav ul.active {
             display: flex;
@@ -3586,10 +3627,16 @@ const GlobalStyles = () => (
 
     @media (max-width: 768px) {
         .logo-title {
-            font-size: 18px;
+            font-size: 16px;
         }
         .logo-crest {
-            height: 50px;
+            height: 45px;
+        }
+        .logo-container {
+            padding: 6px 12px;
+        }
+        .header {
+            padding: 10px 0;
         }
         .form-grid {
             grid-template-columns: 1fr;
@@ -3698,7 +3745,7 @@ const GlobalStyles = () => (
 
     @media (max-width: 480px) {
         .container {
-            padding: 0 10px;
+            padding: 0 15px;
         }
         .hero {
             padding: 60px 15px;
@@ -3711,6 +3758,18 @@ const GlobalStyles = () => (
         }
         .program-card-content {
             padding: 15px;
+        }
+        .logo-title {
+            font-size: 14px;
+        }
+        .logo-crest {
+            height: 40px;
+        }
+        .logo-container {
+            padding: 4px 8px;
+        }
+        .header {
+            padding: 8px 0;
         }
         
         .overview-stats {

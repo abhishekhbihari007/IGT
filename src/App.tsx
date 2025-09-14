@@ -5828,7 +5828,7 @@ const ContactPage = () => {
                             </div>
                             <div className="info-content">
                                 <strong>Email</strong>
-                                <span>admissions@igt.edu.in</span>
+                                <span>info@igteu.in</span>
                             </div>
                         </div>
                         <div className="info-item">

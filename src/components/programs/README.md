@@ -342,7 +342,7 @@ const programData = {
 - **Hardware Support**: [hardware@igt.edu](mailto:hardware@igt.edu)
 
 ### **Administrative Support**
-- **Admissions**: [admissions@igt.edu](mailto:admissions@igt.edu) | +1 (555) 123-4569
+- **Admissions**: [info@igteu.in](mailto:info@igteu.in) | +1 (555) 123-4569
 - **Financial Aid**: [finaid@igt.edu](mailto:finaid@igt.edu)
 - **Student Services**: [students@igt.edu](mailto:students@igt.edu)
 - **Alumni Relations**: [alumni@igt.edu](mailto:alumni@igt.edu)

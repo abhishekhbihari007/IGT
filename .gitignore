@@ -82,3 +82,7 @@ jspm_packages/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Temporary folders
+tmp/
+temp/

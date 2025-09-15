@@ -6,7 +6,6 @@ import ApplyPage from './components/ApplyPage';
 import AdminPage from './components/AdminPage';
 
 
-
 // import './advancedAgriculture.css'; // CSS moved to GlobalStyles component
 
 // ============== 📋 TYPES & INTERFACES ==============
@@ -5665,19 +5664,19 @@ const AdmissionsPage = () => {
                             <div className="process-number">2</div>
                             <h3>Review</h3>
                             <p>Our admissions committee will carefully evaluate your application and credentials.</p>
-                            <a href="#" className="process-btn">Learn More →</a>
+                            <button className="process-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Learn More →</button>
                         </div>
                         <div className="process-card">
                             <div className="process-number">3</div>
                             <h3>Interview</h3>
                             <p>Selected candidates will be invited for an interview (in-person or virtual).</p>
-                            <a href="#" className="process-btn">Prepare →</a>
+                            <button className="process-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Prepare →</button>
                         </div>
                         <div className="process-card">
                             <div className="process-number">4</div>
                             <h3>Decision</h3>
                             <p>Receive your admission decision within 2-4 weeks of your interview.</p>
-                            <a href="#" className="process-btn">Timeline →</a>
+                            <button className="process-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Timeline →</button>
                         </div>
                     </div>
                     
@@ -5694,7 +5693,7 @@ const AdmissionsPage = () => {
                                 <li>Professional resume/CV</li>
                                 <li>Application fee (waivers available)</li>
                             </ul>
-                            <a href="#" className="details-btn btn-red">Download Checklist</a>
+                            <button className="details-btn btn-red" onClick={() => alert('Download feature coming soon!')}>Download Checklist</button>
                         </div>
                         <div className="details-card important-dates">
                             <h3><span className="details-icon"><i className="fas fa-calendar-alt"></i></span>Important Dates</h3>
@@ -5705,7 +5704,7 @@ const AdmissionsPage = () => {
                                 <li>Dec 1 Early Decision Deadline</li>
                                 <li>Aug 20-25 Orientation Week</li>
                             </ul>
-                            <a href="#" className="details-btn btn-red">Add to Calendar</a>
+                            <button className="details-btn btn-red" onClick={() => alert('Calendar feature coming soon!')}>Add to Calendar</button>
                         </div>
                         <div className="details-card">
                             <h3><span className="details-icon"><i className="fas fa-university"></i></span>Tuition & Financial Aid</h3>
@@ -5716,7 +5715,7 @@ const AdmissionsPage = () => {
                                 <li>Education loan partnerships</li>
                                 <li>Flexible payment plans</li>
                             </ul>
-                            <a href="#" className="details-btn btn-red">Financial Aid Information</a>
+                            <button className="details-btn btn-red" onClick={() => alert('Financial aid information coming soon!')}>Financial Aid Information</button>
                         </div>
                     </div>
 
@@ -5846,27 +5845,27 @@ const ContactPage = () => {
                                 <div className="social-icons">
                             {/* ===== SOCIAL MEDIA LINKS - CONNECT ACTUAL URLs HERE ===== */}
                             {/* Facebook Link - Replace # with actual Facebook page URL */}
-                            <a href="#" aria-label="Facebook" title="Follow us on Facebook">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
                                 <i className="fab fa-facebook-f"></i>
                             </a>
                             
                             {/* Twitter Link - Replace # with actual Twitter profile URL */}
-                            <a href="#" aria-label="Twitter" title="Follow us on Twitter">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Follow us on Twitter">
                                 <i className="fab fa-twitter"></i>
                             </a>
                             
                             {/* LinkedIn Link - Replace # with actual LinkedIn company page URL */}
-                            <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Connect on LinkedIn">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                             
                             {/* Instagram Link - Replace # with actual Instagram profile URL */}
-                            <a href="#" aria-label="Instagram" title="Follow us on Instagram">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
                                 <i className="fab fa-instagram"></i>
                             </a>
                             
                             {/* YouTube Link - Replace # with actual YouTube channel URL */}
-                            <a href="#" aria-label="YouTube" title="Watch our videos">
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="Watch our videos">
                                 <i className="fab fa-youtube"></i>
                             </a>
                             {/* ===== END SOCIAL MEDIA LINKS ===== */}
@@ -6433,19 +6432,19 @@ const Footer = () => {
               <p>Institute of Global Technology is committed to academic excellence, innovation, and the holistic development of students to become leaders in technology fields.</p>
               <p><strong>Accredited by AIAB Europe</strong></p>
               <div className="social-icons">
-                <a href="#" aria-label="Facebook" title="Follow us on Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" aria-label="Twitter" title="Follow us on Twitter">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Follow us on Twitter">
                   <i className="fab fa-twitter"></i>
                 </a>
-                <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Connect on LinkedIn">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" aria-label="Instagram" title="Follow us on Instagram">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#" aria-label="YouTube" title="Watch our videos">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="Watch our videos">
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
@@ -6464,12 +6463,12 @@ const Footer = () => {
             <div className="footer-column">
               <h3>Academic Programs</h3>
               <ul>
-                <li><a href="#" className="footer-nav-link">Robotics & AI</a></li>
-                <li><a href="#" className="footer-nav-link">Precision Agriculture</a></li>
-                <li><a href="#" className="footer-nav-link">Drone Technology</a></li>
-                <li><a href="#" className="footer-nav-link">Healthcare & Life Sciences</a></li>
-                <li><a href="#" className="footer-nav-link">Emerging Technologies</a></li>
-                <li><a href="#" className="footer-nav-link">Research Opportunities</a></li>
+                <li><a href="/program/robotics" className="footer-nav-link">Robotics & AI</a></li>
+                <li><a href="/program/precision-agriculture" className="footer-nav-link">Precision Agriculture</a></li>
+                <li><a href="/program/agriculture-drones" className="footer-nav-link">Drone Technology</a></li>
+                <li><a href="/program/bioentrepreneurship" className="footer-nav-link">Healthcare & Life Sciences</a></li>
+                <li><a href="/program/ai-business" className="footer-nav-link">Emerging Technologies</a></li>
+                <li><a href="/program/doctoral-programs" className="footer-nav-link">Research Opportunities</a></li>
               </ul>
             </div>
             <div className="footer-column">
@@ -6494,10 +6493,10 @@ const Footer = () => {
             <div className="footer-bottom-content">
               <span>&copy; {currentYear} Institute of Global Technology. All Rights Reserved.</span>
               <div className="footer-bottom-links">
-                <a href="#" aria-label="Terms of Use">Terms of Use</a>
-                <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
-                <a href="#" aria-label="Accessibility">Accessibility</a>
-                <a href="#" aria-label="Contact Support">Support</a>
+                <a href="/terms" aria-label="Terms of Use">Terms of Use</a>
+                <a href="/privacy" aria-label="Privacy Policy">Privacy Policy</a>
+                <a href="/accessibility" aria-label="Accessibility">Accessibility</a>
+                <a href="/contact" aria-label="Contact Support">Support</a>
               </div>
             </div>
           </div>
@@ -6615,7 +6614,7 @@ const DepartmentsPage = () => (
                             <ul>
                                 {dept.researchAreas.map((area, i) => <li key={i}>{area}</li>)}
                             </ul>
-                            <a href="#">Explore Department</a>
+                            <a href="/programs">Explore Department</a>
                         </div>
                     </div>
                 ))}
@@ -6794,9 +6793,7 @@ const Layout = () => {
 // Root component that sets up routing and renders the main application
 export default function App() {
   return (
-    // Router wrapper for client-side navigation
     <Router>
-      {/* Layout component that provides the overall structure */}
       <Layout />
     </Router>
   );

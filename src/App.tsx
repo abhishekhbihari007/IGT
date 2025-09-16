@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation, Link, Navigate, us
 import ProgramRouter from './components/ProgramRouter';
 import ApplyPage from './components/ApplyPage';
 import AdminPage from './components/AdminPage';
+import LazyImage from './components/LazyImage';
 
 
 // import './advancedAgriculture.css'; // CSS moved to GlobalStyles component
@@ -1099,6 +1100,26 @@ const GlobalStyles = () => (
     .program-card-image {
         width: 100%;
         height: 200px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+        display: block;
+    }
+    
+    .lazy-image-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 12px 12px 0 0;
+        position: relative;
+        flex-shrink: 0;
+    }
+    
+    .lazy-image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
     .program-card-content {
@@ -3545,43 +3566,48 @@ const GlobalStyles = () => (
             display: none;
             flex-direction: column;
             position: absolute;
-            top: 80px;
+            top: 100%;
             left: 0;
-            width: 100%;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            border-radius: 0 0 20px 20px;
-            padding: 20px 0;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-top: none;
+            right: 0;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 0 0 15px 15px;
             z-index: 1000;
+            padding: 20px 0;
+            margin: 0;
+            animation: slideDown 0.3s ease-out;
         }
         .header nav ul.active {
             display: flex;
-            animation: slideDown 0.3s ease-out;
         }
         .header nav ul li {
             margin: 0;
             width: 100%;
-            text-align: center;
         }
         .header nav ul li a,
         .header nav ul li .nav-link {
-            padding: 18px 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            margin: 0 20px;
-            border-radius: 15px;
+            padding: 20px 30px;
+            display: block;
+            color: #495057;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
             transition: all 0.3s ease;
+            border-bottom: 1px solid #f8f9fa;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            width: 100%;
         }
         .header nav ul li a:hover,
         .header nav ul li .nav-link:hover {
-            background: rgba(211, 47, 47, 0.1);
-            transform: translateX(10px);
-            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);
+            background: #f8f9fa;
+            color: #D32F2F;
+        }
+        .header nav ul li a.active,
+        .header nav ul li .nav-link.active {
+            background: #D32F2F;
+            color: #ffffff;
         }
         .header nav ul li:last-child a,
         .header nav ul li:last-child .nav-link {
@@ -3589,6 +3615,8 @@ const GlobalStyles = () => (
         }
         .menu-toggle {
             display: block;
+            position: relative;
+            z-index: 1001;
         }
         
         @keyframes slideDown {
@@ -5154,6 +5182,7 @@ const Header = ({ activePage }: HeaderProps) => {
     setIsMenuOpen(false);
     navigate(path);
   };
+
   
   return (
     <header className="header">
@@ -5307,26 +5336,26 @@ const programsData = [
         category: "Precision Agriculture",
         subtitle: "Innovative programs combining technology with modern agricultural practices",
         courses: [
-            { title: "MASTER PROGRAM in Precision Agriculture", image: "https://www.innominds.com/hs-fs/hubfs/Innominds-201612/img/IM-News-and-Blogs/AI-Applications-in-Precision-Agriculture.jpg?width=800&name=AI-Applications-in-Precision-Agriculture.jpg", duration: "12 Months", description: "Master data-driven farming techniques using IoT, sensors, and AI for crop optimization. Learn advanced soil monitoring, weather prediction, and automated irrigation systems to maximize crop yields while minimizing resource waste." },
-            { title: "MASTER PROGRAM in Agriculture Drones", image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Train in drone piloting, imaging, and data analysis for agricultural applications. Master flight planning, multispectral imaging, and thermal sensing for crop health monitoring." },
-            { title: "MASTER PROGRAM in Hydroponics & Vertical Farming", image: "https://images.squarespace-cdn.com/content/v1/63064607eb816a4d50027fd1/1694614709295-LDS94MIWACFJ3TZH177O/eden-green-vertical-farm-facility.jpg", duration: "12 Months", description: "Learn sustainable farming techniques without soil in controlled environments. Master nutrient solution management, climate control systems, and vertical stacking technologies for urban agriculture." },
-            { title: "MASTER PROGRAM in AI & ML in Agriculture", image: "https://sageuniversity.edu.in/assets/images/blog/role-of-artificial-intelligence-in-agriculture.jpg", duration: "12 Months", description: "Apply artificial intelligence and machine learning to solve agricultural challenges. Master predictive analytics for crop diseases, yield forecasting, and resource optimization." },
-            { title: "MASTER PROGRAM in Agriculture Robotics", image: "https://www.parvalux.com/app/uploads/fly-images/17652/Robots_Motors_in_Agriculture-750x415-f50_50.jpg", duration: "12 Months", description: "Develop and implement robotic solutions for planting, harvesting, and farm automation. Master robotic arm programming, computer vision integration, and autonomous navigation systems." },
-            { title: "MASTER PROGRAM in Advanced Technologies in Agriculture", image: "https://sageuniversity.edu.in/assets/images/blog/use-of-modern-technology-in-agriculture.webp", duration: "12 Months", description: "Explore cutting-edge technologies transforming modern agriculture. Master blockchain for supply chain transparency, IoT for smart farming, and biotechnology for crop improvement." },
-            { title: "MASTER PROGRAM in Agri Entrepreneurship", image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Develop business skills specific to agricultural ventures and startups. Master market analysis, financial planning, and sustainable business models for agribusiness." },
+            { title: "MASTER PROGRAM in Precision Agriculture", image: "/images/precision-agriculture.webp", duration: "12 Months", description: "Master data-driven farming techniques using IoT, sensors, and AI for crop optimization. Learn advanced soil monitoring, weather prediction, and automated irrigation systems to maximize crop yields while minimizing resource waste." },
+            { title: "MASTER PROGRAM in Agriculture Drones", image: "/images/agriculture-drones.webp", duration: "12 Months", description: "Train in drone piloting, imaging, and data analysis for agricultural applications. Master flight planning, multispectral imaging, and thermal sensing for crop health monitoring." },
+            { title: "MASTER PROGRAM in Hydroponics & Vertical Farming", image: "/images/hydroponics-farming.webp", duration: "12 Months", description: "Learn sustainable farming techniques without soil in controlled environments. Master nutrient solution management, climate control systems, and vertical stacking technologies for urban agriculture." },
+            { title: "MASTER PROGRAM in AI & ML in Agriculture", image: "/images/ai-agriculture.webp", duration: "12 Months", description: "Apply artificial intelligence and machine learning to solve agricultural challenges. Master predictive analytics for crop diseases, yield forecasting, and resource optimization." },
+            { title: "MASTER PROGRAM in Agriculture Robotics", image: "/images/agriculture-robotics.webp", duration: "12 Months", description: "Develop and implement robotic solutions for planting, harvesting, and farm automation. Master robotic arm programming, computer vision integration, and autonomous navigation systems." },
+            { title: "MASTER PROGRAM in Advanced Technologies in Agriculture", image: "/images/advanced-tech-agriculture.webp", duration: "12 Months", description: "Explore cutting-edge technologies transforming modern agriculture. Master blockchain for supply chain transparency, IoT for smart farming, and biotechnology for crop improvement." },
+            { title: "MASTER PROGRAM in Agri Entrepreneurship", image: "/images/agri-entrepreneurship.webp", duration: "12 Months", description: "Develop business skills specific to agricultural ventures and startups. Master market analysis, financial planning, and sustainable business models for agribusiness." },
         ]
     },
     {
         category: "AI & Robotics",
         subtitle: "Specialized programs in artificial intelligence and robotic systems",
         courses: [
-            { title: "MASTER PROGRAM in AI & Robotics", image: "https://www.technetexperts.com/wp-content/uploads/2024/08/AI-And-Robotics-1024x574.jpg", duration: "12 Months", description: "Comprehensive training in AI-driven robotic systems and automation. Master machine learning algorithms for robotic control and autonomous decision-making in industrial applications." },
-            { title: "MASTER PROGRAM in Generative AI", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Master the creation of AI models that generate text, images, and media. Learn advanced techniques in natural language processing, computer vision, and creative AI applications for content generation." },
-            { title: "MASTER PROGRAM in AI & Blockchain", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Explore the convergence of AI and decentralized blockchain technologies. Master smart contract development, AI-powered blockchain analytics, and decentralized AI systems for secure applications." },
-            { title: "MASTER PROGRAM in AI & Data Analytics", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Apply AI techniques to extract insights from complex datasets. Master predictive modeling, statistical analysis, and machine learning algorithms for business intelligence and decision-making." },
-            { title: "MASTER PROGRAM in AI & Biological Sciences", image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Apply AI to biological research, drug discovery, and genetic analysis. Master bioinformatics algorithms, protein structure prediction, and AI-driven drug screening for pharmaceutical development." },
-            { title: "MASTER PROGRAM in AI & Cybersecurity Systems", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Develop AI-powered solutions for cybersecurity threats and vulnerabilities. Master threat detection algorithms, anomaly identification, and automated security response systems for network protection." },
-            { title: "Master Program in Cybersecurity", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "18 Months", description: "Defend the digital frontier with advanced cybersecurity techniques. Master threat detection, network security, ethical hacking, and security frameworks to protect organizations from evolving cyber threats." },
+            { title: "MASTER PROGRAM in AI & Robotics", image: "/images/ai-robotics.webp", duration: "12 Months", description: "Comprehensive training in AI-driven robotic systems and automation. Master machine learning algorithms for robotic control and autonomous decision-making in industrial applications." },
+            { title: "MASTER PROGRAM in Generative AI", image: "/images/generative-ai.webp", duration: "12 Months", description: "Master the creation of AI models that generate text, images, and media. Learn advanced techniques in natural language processing, computer vision, and creative AI applications for content generation." },
+            { title: "MASTER PROGRAM in AI & Blockchain", image: "/images/ai-blockchain.webp", duration: "12 Months", description: "Explore the convergence of AI and decentralized blockchain technologies. Master smart contract development, AI-powered blockchain analytics, and decentralized AI systems for secure applications." },
+            { title: "MASTER PROGRAM in AI & Data Analytics", image: "/images/data-analytics.webp", duration: "12 Months", description: "Apply AI techniques to extract insights from complex datasets. Master predictive modeling, statistical analysis, and machine learning algorithms for business intelligence and decision-making." },
+            { title: "MASTER PROGRAM in AI & Biological Sciences", image: "/images/biological-sciences.webp", duration: "12 Months", description: "Apply AI to biological research, drug discovery, and genetic analysis. Master bioinformatics algorithms, protein structure prediction, and AI-driven drug screening for pharmaceutical development." },
+            { title: "MASTER PROGRAM in AI & Cybersecurity Systems", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", duration: "12 Months", description: "Develop AI-powered solutions for cybersecurity threats and vulnerabilities. Master threat detection algorithms, anomaly identification, and automated security response systems for network protection." },
+            { title: "Master Program in Cybersecurity", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", duration: "18 Months", description: "Defend the digital frontier with advanced cybersecurity techniques. Master threat detection, network security, ethical hacking, and security frameworks to protect organizations from evolving cyber threats." },
         ]
     },
     {
@@ -5334,10 +5363,10 @@ const programsData = [
         subtitle: "Programs at the intersection of artificial intelligence and business applications",
         courses: [
             { title: "MASTER PROGRAM in AI & Business", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Transform business operations with AI-driven strategies and solutions. Master process automation, customer analytics, and AI-powered decision support systems for competitive advantage." },
-            { title: "MASTER PROGRAM in AI & Management Studies", image: "https://uks.bunts.edu.in/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-16-at-4.23.10-PM.jpeg", duration: "12 Months", description: "Apply AI to organizational leadership, decision-making, and strategy. Master AI-driven management tools, predictive analytics for strategic planning, and intelligent automation for operational efficiency." },
-            { title: "MASTER PROGRAM in AI & Law", image: "https://aitoolsnetwork.com/wp-content/uploads/2023/05/ai-for-lawyers.jpg", duration: "12 Months", description: "Explore the legal implications and applications of artificial intelligence. Master legal tech tools, AI ethics frameworks, and regulatory compliance for emerging AI technologies." },
-            { title: "MASTER PROGRAM in IP Law", image: "https://blog.ipleaders.in/wp-content/uploads/2021/05/Intellectual-Property-Rights-in-India-1280x720-1.jpg", duration: "12 Months", description: "Specialize in intellectual property law for technology and innovation. Master patent law, copyright protection, and trademark strategies for emerging technologies and digital assets." },
-            { title: "MASTER PROGRAM in AI & Marketing", image: "https://www.marketingevolution.com/hs-fs/hubfs/iStock-1462024468.jpg?width=1060&height=708&name=iStock-1462024468.jpg", duration: "12 Months", description: "Leverage AI for customer insights, personalization, and campaign optimization. Master predictive customer analytics, automated marketing workflows, and AI-driven content generation for targeted campaigns." },
+            { title: "MASTER PROGRAM in AI & Management Studies", image: "/images/ai-management-studies.webp", duration: "12 Months", description: "Apply AI to organizational leadership, decision-making, and strategy. Master AI-driven management tools, predictive analytics for strategic planning, and intelligent automation for operational efficiency." },
+            { title: "MASTER PROGRAM in AI & Law", image: "/images/ai-law.webp", duration: "12 Months", description: "Explore the legal implications and applications of artificial intelligence. Master legal tech tools, AI ethics frameworks, and regulatory compliance for emerging AI technologies." },
+            { title: "MASTER PROGRAM in IP Law", image: "/images/ip-law.webp", duration: "12 Months", description: "Specialize in intellectual property law for technology and innovation. Master patent law, copyright protection, and trademark strategies for emerging technologies and digital assets." },
+            { title: "MASTER PROGRAM in AI & Marketing", image: "/images/ai-marketing.webp", duration: "12 Months", description: "Leverage AI for customer insights, personalization, and campaign optimization. Master predictive customer analytics, automated marketing workflows, and AI-driven content generation for targeted campaigns." },
         ]
     },
     {
@@ -5345,10 +5374,10 @@ const programsData = [
         subtitle: "Programs at the intersection of technology and life sciences",
         courses: [
             { title: "MASTER PROGRAM in Clinical Research & Regulatory Affairs", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Gain expertise in clinical trials and pharmaceutical regulations. Master clinical trial design, regulatory compliance, and drug development processes for global pharmaceutical markets." },
-            { title: "MASTER PROGRAM in Medical Coding", image: "https://ingenioushealthcare.co.in/wp-content/uploads/2021/09/medical-coding.jpg", duration: "12 Months", description: "Learn standardized coding systems for healthcare documentation. Master ICD-10, CPT coding, and healthcare billing systems for accurate medical record management and insurance processing." },
+            { title: "MASTER PROGRAM in Medical Coding", image: "/images/medical-coding.webp", duration: "12 Months", description: "Learn standardized coding systems for healthcare documentation. Master ICD-10, CPT coding, and healthcare billing systems for accurate medical record management and insurance processing." },
             { title: "MASTER PROGRAM in Digital Forensics", image: "https://prd-cyberhub.oss-me-central-1.aliyuncs.com/uploads/CFTi7_AR4EQQE__jPvw8tUUxDtQ1af", duration: "12 Months", description: "Investigate cybercrimes and recover digital evidence. Master forensic tools, evidence preservation techniques, and legal procedures for digital crime investigation and prosecution." },
             { title: "MASTER PROGRAM in Industrial Fermentation Technology", image: "https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Master microbial processes for food, pharmaceuticals, and biofuels. Learn bioreactor design, process optimization, and quality control for large-scale fermentation operations." },
-            { title: "MASTER PROGRAM in Vaccine Technology", image: "https://sitescdn.wearevennture.co.uk/public/mrl/mediahub/vaccinehd.png", duration: "12 Months", description: "Study vaccine development, production, and quality control. Master vaccine formulation, manufacturing processes, and regulatory standards for safe and effective immunization products." },
+            { title: "MASTER PROGRAM in Vaccine Technology", image: "/images/vaccine-technology.webp", duration: "12 Months", description: "Study vaccine development, production, and quality control. Master vaccine formulation, manufacturing processes, and regulatory standards for safe and effective immunization products." },
             { title: "MASTER PROGRAM in Bioentrepreneurship", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Develop business ventures in biotechnology and life sciences. Master biotech business models, funding strategies, and commercialization pathways for innovative life science technologies." },
         ]
     },
@@ -5356,7 +5385,7 @@ const programsData = [
         category: "AI & Creative Technologies",
         subtitle: "Programs combining artificial intelligence with creative disciplines",
         courses: [
-            { title: "MASTER PROGRAM in AI & Designing Technology", image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Apply AI to product, graphic, and UX/UI design processes. Master AI-powered design tools, automated layout generation, and intelligent user experience optimization for modern digital products." },
+            { title: "MASTER PROGRAM in AI & Designing Technology", image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", duration: "12 Months", description: "Apply AI to product, graphic, and UX/UI design processes. Master AI-powered design tools, automated layout generation, and intelligent user experience optimization for modern digital products." },
             { title: "MASTER PROGRAM in AI & Arts", image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Explore the intersection of artificial intelligence and creative arts. Master generative art algorithms, AI-assisted composition, and digital creativity tools for innovative artistic expression." },
         ]
     },
@@ -5364,12 +5393,12 @@ const programsData = [
         category: "Emerging Technologies & Smart Systems",
         subtitle: "Innovative programs in AR, VR, IoT, and intelligent systems shaping the future",
         courses: [
-            { title: "Reality Architect: Master of AR/VR/XR Development", image: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Master immersive technologies to build future-ready AR, VR, and XR applications. Learn 3D modeling, spatial computing, and interactive design for creating engaging virtual experiences." },
-            { title: "Virtual Vanguard: Master in Virtual & Augmented Reality Engineering", image: "https://caddcentre.com/blog/wp-content/uploads/2025/01/AR-VR-1-1.jpg", duration: "12 Months", description: "Engineer advanced virtual and augmented systems for industrial and consumer applications. Master hardware integration, software development, and user interface design for cutting-edge VR/AR solutions." },
-            { title: "Game Changer: Master Program in XR Gaming", image: "https://gamecloud-ltd.com/wp-content/uploads/2024/04/Screenshot-2024-04-15-165122.jpg", duration: "12 Months", description: "Design and develop immersive games using XR technology and gamification strategy. Master game engine development, 3D asset creation, and interactive storytelling for next-generation gaming experiences." },
-            { title: "Master Program in AR and Mixed Reality", image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80", duration: "12 Months", description: "Specialize in designing cutting-edge MR life environments and interfaces. Master spatial computing, gesture recognition, and environmental mapping for seamless mixed reality experiences." },
-            { title: "Master Program in Electric Vehicle Technology", image: "https://witricity.com/hs-fs/hubfs/EVs.png?width=1600&height=900&name=EVs.png", duration: "12 Months", description: "Learn about EV systems, battery design, automatic mobility, and energy management. Master electric powertrain design, battery management systems, and smart charging infrastructure for sustainable transportation." },
-            { title: "Master Program in IoT and Embedded Systems", image: "https://tamediacdn.techaheadcorp.com/wp-content/uploads/2023/09/16045709/A-Step-By-Step-Tutorial-For-Building-Your-First-IoT-Embedded-System.webp", duration: "12 Months", description: "Build connected smart devices with microcontrollers, sensors, and communication protocols. Master embedded software development, wireless communication, and cloud integration for smart city and industrial IoT applications." },
+            { title: "Reality Architect: Master of AR/VR/XR Development", image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", duration: "12 Months", description: "Master immersive technologies to build future-ready AR, VR, and XR applications. Learn 3D modeling, spatial computing, and interactive design for creating engaging virtual experiences." },
+            { title: "Virtual Vanguard: Master in Virtual & Augmented Reality Engineering", image: "/images/vr-ar-engineering.webp", duration: "12 Months", description: "Engineer advanced virtual and augmented systems for industrial and consumer applications. Master hardware integration, software development, and user interface design for cutting-edge VR/AR solutions." },
+            { title: "Game Changer: Master Program in XR Gaming", image: "/images/xr-gaming.webp", duration: "12 Months", description: "Design and develop immersive games using XR technology and gamification strategy. Master game engine development, 3D asset creation, and interactive storytelling for next-generation gaming experiences." },
+            { title: "Master Program in AR and Mixed Reality", image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/0*GzEPjvWnjzvAUOKM.jpg", duration: "12 Months", description: "Specialize in designing cutting-edge MR life environments and interfaces. Master spatial computing, gesture recognition, and environmental mapping for seamless mixed reality experiences." },
+            { title: "Master Program in Electric Vehicle Technology", image: "/images/electric-vehicle.webp", duration: "12 Months", description: "Learn about EV systems, battery design, automatic mobility, and energy management. Master electric powertrain design, battery management systems, and smart charging infrastructure for sustainable transportation." },
+            { title: "Master Program in IoT and Embedded Systems", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", duration: "12 Months", description: "Build connected smart devices with microcontrollers, sensors, and communication protocols. Master embedded software development, wireless communication, and cloud integration for smart city and industrial IoT applications." },
             { title: "Master Program in Human-Computer Interaction", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", duration: "12 Months", description: "Focus on designing intuitive interfaces, enhancing user experiences, and usability testing. Master user research methodologies, interaction design principles, and accessibility standards for inclusive digital products." },
         ]
     },
@@ -5505,7 +5534,7 @@ const ProgramCard = ({ course }: { course: Course }) => {
 
     return (
         <div className="program-card">
-            <img src={course.image} alt={course.title} className="program-card-image" />
+            <LazyImage src={course.image} alt={course.title} className="program-card-image" />
             <div className="program-card-content">
                 <h4>{course.title}</h4>
                 <div className="program-card-duration">
@@ -5523,7 +5552,7 @@ const ProgramCard = ({ course }: { course: Course }) => {
                 </div>
                 <div className="program-card-buttons">
                     <button className="btn btn-details" onClick={handleDetailsClick}>Details</button>
-                    <button className="btn btn-apply ag-btn-apply" onClick={() => window.location.href = '/apply'}>Apply</button>
+                    <button className="btn btn-apply ag-btn-apply" onClick={() => navigate('/apply')}>Apply</button>
                 </div>
             </div>
         </div>
@@ -5641,6 +5670,8 @@ const ProgramsPage = () => {
 
 // ============== ADMISSIONS PAGE COMPONENT ==============
 const AdmissionsPage = () => {
+    const navigate = useNavigate();
+    
     return (
         <section className="admissions-page">
             <div className="admissions-journey-banner">
@@ -5658,7 +5689,7 @@ const AdmissionsPage = () => {
                             <div className="process-number">1</div>
                             <h3>Application</h3>
                             <p>Submit your online application along with required documents through our portal.</p>
-                            <button className="process-btn" onClick={() => window.location.href = '/apply'}>Apply Now →</button>
+                            <button className="process-btn" onClick={() => navigate('/apply')}>Apply Now →</button>
                         </div>
                         <div className="process-card">
                             <div className="process-number">2</div>

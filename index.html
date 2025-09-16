@@ -2,14 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/44c19669-7f24-4818-8b4e-03bd6869535a.png" />
-    <link rel="shortcut icon" type="image/png" href="/44c19669-7f24-4818-8b4e-03bd6869535a.png" />
-    <link rel="apple-touch-icon" href="/44c19669-7f24-4818-8b4e-03bd6869535a.png" />
+    <link rel="icon" type="image/png" href="./44c19669-7f24-4818-8b4e-03bd6869535a.png" />
+    <link rel="shortcut icon" type="image/png" href="./44c19669-7f24-4818-8b4e-03bd6869535a.png" />
+    <link rel="apple-touch-icon" href="./44c19669-7f24-4818-8b4e-03bd6869535a.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IGT - Innovation Growth Technology</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="build-timestamp" content="2024-12-19-16:45:00" />
+    <meta name="version" content="2.0.0" />
+    <title>IGT - INSTITUTE OF GLOBAL TECHNOLOGY</title>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="/44c19669-7f24-4818-8b4e-03bd6869535a.png" as="image" type="image/png">
+    <link rel="preload" href="./44c19669-7f24-4818-8b4e-03bd6869535a.png" as="image" type="image/png">
+    
+    <!-- Preload critical program images -->
+    <link rel="preload" href="/images/precision-agriculture.webp" as="image" type="image/webp">
+    <link rel="preload" href="/images/agriculture-drones.webp" as="image" type="image/webp">
+    <link rel="preload" href="/images/ai-agriculture.webp" as="image" type="image/webp">
     
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -64,5 +74,18 @@
       <div class="loading">Loading IGT...</div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

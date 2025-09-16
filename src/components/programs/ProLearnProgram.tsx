@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProLearnProgram: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="program-details-page">
       <div className="container">
@@ -109,7 +111,7 @@ const ProLearnProgram: React.FC = () => {
           <h2>Ready to Learn from the Experts?</h2>
           <p>Join thousands of learners who are advancing their careers with expert-led education.</p>
           <div className="cta-buttons">
-            <button className="btn btn-primary" onClick={() => window.location.href = '/apply'}>Apply Now</button>
+            <button className="btn btn-primary" onClick={() => navigate('/apply')}>Apply Now</button>
             <button className="btn btn-secondary" onClick={() => window.location.href = '/contact'}>Contact Us</button>
           </div>
         </div>

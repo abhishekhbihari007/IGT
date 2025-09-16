@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProgramTemplate.css';
 
 interface ProgramData {
@@ -17,6 +18,7 @@ interface ProgramTemplateProps {
 }
 
 const ProgramTemplate: React.FC<ProgramTemplateProps> = ({ programData }) => {
+  const navigate = useNavigate();
   return (
     <div className="program-template">
       {/* Introduction Part (Title Only) */}
@@ -146,7 +148,7 @@ const ProgramTemplate: React.FC<ProgramTemplateProps> = ({ programData }) => {
           <div className="apply-content">
             <h2>Ready to Start Your Journey?</h2>
             <p>Join our program and transform your career</p>
-            <button className="apply-button" onClick={() => window.location.href = '/apply'}>
+            <button className="apply-button" onClick={() => navigate('/apply')}>
               Apply Now
             </button>
           </div>

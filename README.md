@@ -1,38 +1,38 @@
 # 🏛️ Institute of Global Technology
 
-<div align=\"center\">
+<div align="center">
 
 ![IGT Logo](https://i.ibb.co/cSBD74Mm/Red-Yellow-Vintage-Classic-School-Academy-Logo.png)
 
-#  **Official Website Repository**
+# **Official Website Repository**
 
 [![React](https://img.shields.io/badge/React-18.0.0-blue.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.0-orange.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-green.svg?style=for-the-badge&logo=github)](https://github.com/abhishekhbihari007/igt-website)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-green.svg?style=for-the-badge&logo=github)](https://github.com/abhishekhbihari007/IGT)
 
-**Gateway to Excellence in Education** ��
+**Gateway to Excellence in Education** 🎓
 
-[![Website Status](https://img.shields.io/badge/Website-Live%20%7C%20Active-brightgreen.svg?style=for-the-badge)](https://github.com/abhishekhbihari007/igt-website)
+[![Website Status](https://img.shields.io/badge/Website-Live%20%7C%20Active-brightgreen.svg?style=for-the-badge)](https://github.com/abhishekhbihari007/IGT)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg?style=for-the-badge)](https://github.com/abhishekhbihari007/igt-website)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg?style=for-the-badge)](https://github.com/abhishekhbihari007/IGT)
 
 ---
 
 </div>
 
-##  **About IGT**
+## **About IGT**
 
 The **Institute of Global Technology** is a premier institution established in 2005, dedicated to transforming technology education through innovative pedagogy, cutting-edge research, and holistic student development. Our campus provides a vibrant learning environment with state-of-the-art facilities and experienced faculty.
 
-###  **Mission**
+### **Mission**
 > *Empowering students through cutting-edge technology education, innovative research, and holistic development for a brighter future.*
 
 ---
 
 ## ✨ **Key Features**
 
-| �� **Design** | 🚀 **Performance** | 📱 **Responsive** | �� **Modern Tech** |
+| 🎨 **Design** | 🚀 **Performance** | 📱 **Responsive** | ⚡ **Modern Tech** |
 |:---:|:---:|:---:|:---:|
 | Professional UI/UX | Fast Loading | Mobile First | React 18 + TS |
 | Brand Consistent | Optimized Build | Tablet Ready | Vite Build Tool |
@@ -42,7 +42,7 @@ The **Institute of Global Technology** is a premier institution established in 2
 
 ## 🛠️ **Technology Stack**
 
-<div align=\"center\">
+<div align="center">
 
 ### **Frontend Technologies**
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
@@ -61,14 +61,14 @@ The **Institute of Global Technology** is a premier institution established in 2
 
 ## 🎓 **Academic Programs**
 
-<div align=\"center\">
+<div align="center">
 
-| 🎯 **Program** | �� **Duration** | 🏷️ **Status** | �� **Highlights** |
+| 🎯 **Program** | ⏱️ **Duration** | 🏷️ **Status** | ✨ **Highlights** |
 |:---|:---:|:---:|:---|
-| **�� Robotics & AI** | 12 Months | 🟢 Active | Advanced AI & ML |
-| **🌾 Precision Agriculture** | 12 Months | 🟢 Active | Drone Technology |
-| **�� Medical Robotics** | 12 Months | 🟢 Active | Healthcare Automation |
-| **�� Agri Robotics** | 12 Months | 🟢 Active | Smart Farming |
+| **🤖 AI & Management** | 12 Months | 🟢 Active | EU ACC Certificate |
+| **🥽 AR & VR Technology** | 12 Months | 🟢 Active | 100+ Industrial Partners |
+| **🤖 Medical Robotics** | 12 Months | 🟡 Coming Soon | Healthcare Automation |
+| **🌾 Agriculture Robotics** | 12 Months | 🟡 Coming Soon | Smart Farming |
 | **🛸 Drone Manufacturing** | 12 Months | 🟡 Coming Soon | Industrial Applications |
 
 </div>
@@ -77,11 +77,11 @@ The **Institute of Global Technology** is a premier institution established in 2
 
 ## 🔬 **Research Departments**
 
-<div align=\"center\">
+<div align="center">
 
 ### **Core Research Areas**
 
-| 🧠 **AI & ML** | 🔒 **Cybersecurity** | �� **Data Science** | �� **IoT & Edge** |
+| 🧠 **AI & ML** | 🔒 **Cybersecurity** | 📊 **Data Science** | 🌐 **IoT & Edge** |
 |:---:|:---:|:---:|:---:|
 | Natural Language Processing | Threat Intelligence | Big Data Analytics | IoT Security |
 | Computer Vision | Incident Response | Data Visualization | Edge AI |
@@ -104,15 +104,15 @@ The **Institute of Global Technology** is a premier institution established in 2
 ### **Prerequisites**
 - ⚡ Node.js 16+ 
 - 📦 npm or yarn
-- �� Git
+- 🔧 Git
 
 ### **Installation**
-\`\`\`bash
+```bash
 # 🚀 Clone the repository
-git clone https://github.com/abhishekhbihari007/igt-website.git
+git clone https://github.com/abhishekhbihari007/IGT.git
 
 # 📁 Navigate to project directory
-cd igt-website
+cd IGT
 
 # 📦 Install dependencies
 npm install
@@ -122,39 +122,44 @@ npm run dev
 
 # 🏗️ Build for production
 npm run build
-\`\`\`
+```
 
 ---
 
 ## 📁 **Project Structure**
 
-\`\`\`
-igt-website/
+```
+IGT/
 ├── 🎨 src/
-│   ├── App.tsx          # �� Main application
-│   ├── App.css          # 🎨 Global styles
-│   ├── index.css        # 📝 Base styles
-│   └── main.tsx         # ⚡ Entry point
-├── �� public/            # 📁 Static assets
-├── 🏗️ dist/              # 🚀 Build output
-├── �� package.json       # �� Dependencies
-├── ⚙️ tsconfig.json      # �� TypeScript config
-├── ⚡ vite.config.ts     # �� Vite config
-└── �� README.md          # �� This file
-\`\`\`
+│   ├── App.tsx                    # 🚀 Main application
+│   ├── App.css                    # 🎨 Global styles
+│   ├── index.css                  # 📝 Base styles
+│   ├── main.tsx                   # ⚡ Entry point
+│   └── components/                # 🧩 React components
+│       ├── programs/              # 📚 Program components
+│       ├── LazyImage.tsx          # 🖼️ Image optimization
+│       └── ProgramRouter.tsx      # 🛣️ Program routing
+├── 📁 public/                     # 📁 Static assets
+│   └── images/                    # 🖼️ Image assets
+├── 🏗️ dist/                       # 🚀 Build output
+├── 📦 package.json                # 📋 Dependencies
+├── ⚙️ tsconfig.json               # 🔧 TypeScript config
+├── ⚡ vite.config.ts              # ⚙️ Vite config
+└── 📖 README.md                   # 📖 This file
+```
 
 ---
 
 ## 🎨 **Design Features**
 
-<div align=\"center\">
+<div align="center">
 
 ### **Visual Elements**
-| �� **Brand Colors** | �� **Typography** | ✨ **Animations** | �� **Responsive** |
+| 🎨 **Brand Colors** | 📝 **Typography** | ✨ **Animations** | 📱 **Responsive** |
 |:---:|:---:|:---:|:---:|
-| **Primary**: #D32F2F | **Inter** (Modern) | Smooth Transitions | Mobile First |
-| **Secondary**: #C0A062 | **Georgia** (Elegant) | Hover Effects | Tablet Ready |
-| **Accent**: #212529 | **Professional** | Micro-interactions | Desktop Perfect |
+| **Primary**: #D32F2F | **System Fonts** (Modern) | Smooth Transitions | Mobile First |
+| **Secondary**: #C0A062 | **Professional** | Hover Effects | Tablet Ready |
+| **Accent**: #212529 | **Clean & Readable** | Micro-interactions | Desktop Perfect |
 
 </div>
 
@@ -162,9 +167,9 @@ igt-website/
 
 ## 🌐 **Live Demo**
 
-<div align=\"center\">
+<div align="center">
 
-[![Website Preview](https://img.shields.io/badge/🌐%20Visit%20Website-Live%20Demo-blue?style=for-the-badge&logo=globe)](https://github.com/abhishekhbihari007/igt-website)
+[![Website Preview](https://img.shields.io/badge/🌐%20Visit%20Website-Live%20Demo-blue?style=for-the-badge&logo=globe)](https://github.com/abhishekhbihari007/IGT)
 
 *Website will be deployed soon!*
 
@@ -174,7 +179,7 @@ igt-website/
 
 ## 📞 **Contact Information**
 
-<div align=\"center\">
+<div align="center">
 
 | 📍 **Location** | 📧 **Email** | ⏰ **Timing** | 🌐 **Website** |
 |:---|:---|:---|:---|
@@ -186,7 +191,7 @@ igt-website/
 
 ## 🏆 **Accreditation**
 
-<div align=\"center\">
+<div align="center">
 
 ![AIAB Europe](https://img.shields.io/badge/Accredited%20by-AIAB%20Europe-gold?style=for-the-badge)
 
@@ -198,9 +203,9 @@ igt-website/
 
 ## 📊 **Institute Statistics**
 
-<div align=\"center\">
+<div align="center">
 
-| �� **Students** | 👨‍🏫 **Faculty** | 📚 **Programs** | 🏆 **Years** |
+| 👨‍🎓 **Students** | 👨‍🏫 **Faculty** | 📚 **Programs** | 🏆 **Years** |
 |:---:|:---:|:---:|:---:|
 | **6000+** | **300+** | **60+** | **20+** |
 
@@ -208,15 +213,27 @@ igt-website/
 
 ---
 
-## �� **Contributing**
+## 🚀 **Recent Updates**
 
-<div align=\"center\">
+### **Latest Changes (v1.2.0)**
+- ✅ Removed "View All Upcoming Courses" button from homepage
+- ✅ Fixed spacing issues in "Our Academic Programs" section
+- ✅ Removed "Schedule Campus Tour" buttons from admissions pages
+- ✅ Centered "Contact Admissions" button for better UX
+- ✅ Added new program components and styling
+- ✅ Improved responsive design for mobile devices
+
+---
+
+## 🤝 **Contributing**
+
+<div align="center">
 
 This is the **official website** for the Institute of Global Technology.
 
 For contributions or suggestions, please contact the development team.
 
-[![Contributing](https://img.shields.io/badge/🤝%20Contributing-Welcome-green?style=for-the-badge)](https://github.com/abhishekhbihari007/igt-website)
+[![Contributing](https://img.shields.io/badge/🤝%20Contributing-Welcome-green?style=for-the-badge)](https://github.com/abhishekhbihari007/IGT)
 
 </div>
 
@@ -224,7 +241,7 @@ For contributions or suggestions, please contact the development team.
 
 ## 📄 **License**
 
-<div align=\"center\">
+<div align="center">
 
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](LICENSE)
 
@@ -239,19 +256,18 @@ For contributions or suggestions, please contact the development team.
 - 🎓 **Faculty and Staff** of IGT
 - 👨‍🎓 **Students and Alumni**
 - 🤝 **Technology Partners**
-- �� **Development Team**
+- 💻 **Development Team**
 
 ---
 
-<div align=\"center\">
+<div align="center">
 
 ## 🎉 **Built with ❤️ for the Institute of Global Technology**
 
-![IGT Banner](https://img.shields.io/badge/��️%20IGT%20Website-Official%20Repository-blue?style=for-the-badge)
+![IGT Banner](https://img.shields.io/badge/🏛️%20IGT%20Website-Official%20Repository-blue?style=for-the-badge)
 
 **Empowering students through cutting-edge technology education, innovative research, and holistic development for a brighter future.** 🚀
 
 ---
 
-</div>" > 
-"# IGT" 
+</div>

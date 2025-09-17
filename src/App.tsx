@@ -2119,6 +2119,12 @@ const GlobalStyles = () => (
         font-size: 0.9rem;
     }
 
+    /* ============== OUR SERVICES STYLES ============== */
+    .our-services {
+        padding: 80px 0;
+        background: #fff;
+    }
+
     /* ============== UPCOMING COURSES STYLES ============== */
     .upcoming-courses {
         background-color: #fdfaf5;
@@ -6159,41 +6165,6 @@ const AcademicPrograms = () => {
                     </div>
                 </div>
 
-                {/* ProLearn Program Card */}
-                <div className="program-card">
-                    <div className="program-visual">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="ProLearn" />
-                    </div>
-                    <div className="program-content">
-                        <h4>ProLearn</h4>
-                        <p>Learn from the Subject Matter Experts. Connect with subject matter experts and academics in cutting-edge fields. <strong>Gain practical knowledge</strong> through hands-on demonstrations and real-world exercises.</p>
-                        <button className="btn btn-details" onClick={() => {
-                            const returnUrl = encodeURIComponent(window.location.origin);
-                            const newWindow = window.open(`https://prolearn.org.in/?return=${returnUrl}`, '_blank');
-                            
-                            // Store reference for potential back navigation
-                            if (newWindow) {
-                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
-                                sessionStorage.setItem('externalWindow', 'prolearn');
-                            }
-                        }}>Details</button>
-                        <div className="program-info">
-                            <div className="info-item">
-                                <i className="fas fa-users"></i>
-                                <span>10,000+ Active Learners</span>
-                            </div>
-                            <div className="info-item">
-                                <i className="fas fa-book"></i>
-                                <span>100+ Expert Courses</span>
-                            </div>
-                            <div className="info-item">
-                                <i className="fas fa-award"></i>
-                                <span>95% Success Rate</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div className="program-card">
                     <div className="program-visual">
                         <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Agri Drones" />
@@ -6232,6 +6203,55 @@ const AcademicPrograms = () => {
                             <div className="info-item">
                                 <i className="fas fa-clock"></i>
                                 <span>12 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    );
+};
+
+// ============== OUR SERVICES COMPONENT ==============
+const OurServices = () => {
+    const navigate = useNavigate();
+    
+    return (
+    <section id="our-services" className="our-services">
+        <div className="container">
+            <h2>Our Services</h2>
+            <p className="section-subtitle">Comprehensive educational services designed to empower your learning journey</p>
+            <div className="programs-grid">
+                <div className="program-card">
+                    <div className="program-visual">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="ProLearn" />
+                    </div>
+                    <div className="program-content">
+                        <h4>ProLearn</h4>
+                        <p>Learn from the Subject Matter Experts. Connect with subject matter experts and academics in cutting-edge fields. <strong>Gain practical knowledge</strong> through hands-on demonstrations and real-world exercises.</p>
+                        <button className="btn btn-details" onClick={() => {
+                            const returnUrl = encodeURIComponent(window.location.origin);
+                            const newWindow = window.open(`https://prolearn.org.in/?return=${returnUrl}`, '_blank');
+                            
+                            // Store reference for potential back navigation
+                            if (newWindow) {
+                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
+                                sessionStorage.setItem('externalWindow', 'prolearn');
+                            }
+                        }}>Details</button>
+                        <div className="program-info">
+                            <div className="info-item">
+                                <i className="fas fa-users"></i>
+                                <span>10,000+ Active Learners</span>
+                            </div>
+                            <div className="info-item">
+                                <i className="fas fa-book"></i>
+                                <span>100+ Expert Courses</span>
+                            </div>
+                            <div className="info-item">
+                                <i className="fas fa-award"></i>
+                                <span>95% Success Rate</span>
                             </div>
                         </div>
                     </div>
@@ -6578,6 +6598,7 @@ const HomePage = () => (
         <About />
         <WhyChooseUs />
         <AcademicPrograms />
+        <OurServices />
         <UpcomingCourses />
         <ResearchProjects />
         <EventsSection />

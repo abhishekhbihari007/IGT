@@ -87,6 +87,7 @@ const GlobalStyles = () => (
         transition: all 0.3s ease;
         padding: 8px 16px;
         border-radius: 12px;
+        margin-left: -100px;
     }
     
     .logo-container:hover {
@@ -3840,7 +3841,69 @@ const GlobalStyles = () => (
     }
     
     /* ============== RESPONSIVE STYLES ============== */
+    
+    /* Large screens - slightly reduce spacing */
+    @media (max-width: 1300px) {
+        .header nav ul li {
+            margin-left: 25px;
+        }
+        .header nav ul li a,
+        .header nav ul li .nav-link {
+            padding: 10px 18px;
+            font-size: 14px;
+        }
+    }
+    
+    /* Medium screens - reduce padding and font size */
+    @media (max-width: 1200px) {
+        .header nav ul li {
+            margin-left: 18px;
+        }
+        .header nav ul li a,
+        .header nav ul li .nav-link {
+            padding: 8px 14px;
+            font-size: 13px;
+        }
+    }
+    
+    /* Smaller medium screens - further reduce spacing */
     @media (max-width: 1100px) {
+        .header nav ul li {
+            margin-left: 12px;
+        }
+        .header nav ul li a,
+        .header nav ul li .nav-link {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+    }
+    
+    /* Very small screens - minimal spacing */
+    @media (max-width: 1050px) {
+        .header nav ul li {
+            margin-left: 8px;
+        }
+        .header nav ul li a,
+        .header nav ul li .nav-link {
+            padding: 5px 8px;
+            font-size: 11px;
+        }
+    }
+    
+    /* Extra small screens - ultra minimal spacing */
+    @media (max-width: 1000px) {
+        .header nav ul li {
+            margin-left: 5px;
+        }
+        .header nav ul li a,
+        .header nav ul li .nav-link {
+            padding: 4px 6px;
+            font-size: 10px;
+        }
+    }
+    
+    /* Mobile navigation - hamburger menu */
+    @media (max-width: 992px) {
         .header nav ul {
             display: none;
             flex-direction: column;
@@ -3910,12 +3973,51 @@ const GlobalStyles = () => (
         }
     }
     
+    @media (max-width: 1200px) {
+        .logo-title {
+            font-size: 20px;
+        }
+        .logo-crest {
+            height: 55px;
+        }
+    }
+    
+    @media (max-width: 1100px) {
+        .logo-title {
+            font-size: 18px;
+        }
+        .logo-crest {
+            height: 50px;
+        }
+    }
+    
+    @media (max-width: 1050px) {
+        .logo-title {
+            font-size: 16px;
+        }
+        .logo-crest {
+            height: 45px;
+        }
+    }
+    
+    @media (max-width: 1000px) {
+        .logo-title {
+            font-size: 14px;
+        }
+        .logo-crest {
+            height: 40px;
+        }
+    }
+    
     @media (max-width: 992px) {
         .process-grid {
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
         .logo-title {
-            font-size: 20px;
+            font-size: 16px;
+        }
+        .logo-crest {
+            height: 45px;
         }
         .container {
             max-width: 100%;
@@ -3940,9 +4042,14 @@ const GlobalStyles = () => (
         }
         .logo-container {
             padding: 6px 12px;
+            margin-left: -75px;
         }
         .header {
             padding: 10px 0;
+        }
+        .header .container {
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .form-grid {
             grid-template-columns: 1fr;
@@ -4170,8 +4277,13 @@ const GlobalStyles = () => (
         .logo-crest {
             height: 40px;
         }
+        .header .container {
+            justify-content: space-between;
+            align-items: center;
+        }
         .logo-container {
             padding: 4px 8px;
+            margin-left: -50px;
         }
         .header {
             padding: 8px 0;

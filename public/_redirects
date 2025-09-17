@@ -1,6 +1,15 @@
+# SPA routing - redirect all routes to index.html
 /*    /index.html   200
-/*.js    /index.html   200
-/*.css    /index.html   200
-/*.webp    /index.html   200
-/*.png    /index.html   200
-/*.jpg    /index.html   200
+
+# Static assets
+/assets/*    /assets/:splat    200
+/images/*    /images/:splat    200
+*.js         /index.html      200
+*.css        /index.html      200
+*.webp       /index.html      200
+*.png        /index.html      200
+*.jpg        /index.html      200
+*.jpeg       /index.html      200
+*.gif        /index.html      200
+*.svg        /index.html      200
+*.ico        /index.html      200

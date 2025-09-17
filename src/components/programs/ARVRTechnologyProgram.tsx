@@ -21,7 +21,6 @@ const ARVRTechnologyProgram: React.FC = () => {
         </div>
 
         <div className="arvr-hero-content">
-
           <div className="arvr-hero-grid">
             {/* Content */}
             <div className="arvr-hero-text">
@@ -722,4 +721,3 @@ const ARVRTechnologyProgram: React.FC = () => {
 };
 
 export default ARVRTechnologyProgram;
-

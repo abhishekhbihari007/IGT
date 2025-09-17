@@ -393,85 +393,199 @@ const GlobalStyles = () => (
     .section-subtitle::after {
         content: '';
         display: block;
-        width: 50px;
-        height: 3px;
-        background-color: #C0A062;
-        margin: 15px auto 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #C0A062, #D4AF37);
+        margin: 20px auto 0;
+        border-radius: 2px;
     }
 
 
     /* ============== ABOUT SECTION ============== */
-    .about {
+    .about-section {
         background-color: #fdfaf5;
+        padding: 80px 0 40px 0;
     }
     
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15px;
-        align-items: center;
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
-    .about-image img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .about-header {
+        text-align: center;
+        margin-bottom: 60px;
     }
     
-    .about-content h3 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+    .about-title {
+        font-size: 2.8rem;
+        font-weight: 700;
         color: #212529;
-    }
-    
-    .about-content p {
         margin-bottom: 20px;
+        line-height: 1.2;
     }
     
-    .accredited-text {
+    .about-subtitle {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        position: relative;
+    }
+    
+    .about-golden-line {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #C0A062, #D4AF37);
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+    
+    .about-main-content {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 50px;
+        align-items: stretch;
+        margin-bottom: 60px;
+    }
+    
+    .about-image-section {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .about-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        flex: 1;
+        height: 100%;
+    }
+    
+    .about-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+        display: block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .about-image-wrapper:hover img {
+        transform: scale(1.05);
+    }
+    
+    .about-text-section {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .about-content-wrapper {
+        width: 100%;
+    }
+    
+    
+    .about-content-title {
+        font-size: 2.5rem;
         font-weight: 700;
         color: #212529;
         margin-bottom: 30px;
+        line-height: 1.2;
+        position: relative;
     }
     
-    .stats-container {
-        display: flex;
-        gap: 30px;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+    .about-paragraphs {
+        margin-bottom: 30px;
     }
     
-    .stat-item {
-        text-align: left;
-        transition: transform 0.3s ease;
+    .about-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #495057;
+        margin-bottom: 25px;
     }
     
-    .stat-item:hover {
-        transform: scale(1.1);
+    
+    .about-statistics {
+        border-top: 1px solid #e9ecef;
+        padding-top: 30px;
+        margin-top: 20px;
+        text-align: center;
     }
-
-    .stat-item .number {
-        font-size: 2.5rem;
+    
+    .about-accreditation {
+        margin-bottom: 30px;
+    }
+    
+    .accreditation-text {
         font-weight: 700;
-        color: #D32F2F;
+        color: #212529;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+    
+    .stats-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .stat-box {
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .stat-box:hover {
+        transform: scale(1.05);
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #DC2626 !important;
+        line-height: 1;
+        margin-bottom: 8px;
+        display: block;
         transition: color 0.3s ease;
     }
     
-    .stat-item:hover .number {
-        color: #C0A062;
+    .stat-box:hover .stat-number {
+        color: #FFD700;
     }
     
-    .stat-item .label {
+    .stat-label {
         font-size: 1rem;
-        color: #495057;
+        color: #212529;
         font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
     }
     
     
     /* ============== WHY CHOOSE US SECTION ============== */
     .why-choose-us {
         background-color: #f8f9fa;
-        padding: 80px 20px;
+        padding: 40px 20px 80px 20px;
     }
     
     .why-choose-us h2 {
@@ -2122,7 +2236,141 @@ const GlobalStyles = () => (
     /* ============== OUR SERVICES STYLES ============== */
     .our-services {
         padding: 80px 0;
-        background: #fff;
+        background: linear-gradient(90deg, #ffffff 0%, #ffe8e8 100%);
+    }
+
+    .prolearn-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .prolearn-card {
+        background: linear-gradient(90deg, #ffffff 0%, #ffe8e8 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-top: 40px;
+    }
+
+    .prolearn-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        min-height: 500px;
+    }
+
+    .prolearn-text {
+        padding: 60px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: transparent;
+    }
+
+    .prolearn-heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .prolearn-highlight {
+        color: #D32F2F;
+        display: block;
+    }
+
+    .prolearn-description {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    .prolearn-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .prolearn-stats .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        transition: none;
+        transform: none;
+    }
+
+    .prolearn-stats .stat-item:hover {
+        transform: none;
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #D32F2F, #F44336);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .stat-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 500;
+    }
+
+    .prolearn-btn {
+        background: white;
+        color: #D32F2F;
+        border: 2px solid #D32F2F;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+    }
+
+    .prolearn-btn:hover {
+        background: #D32F2F;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+    }
+
+    .prolearn-visual {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .prolearn-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0 20px 20px 0;
     }
 
     /* ============== UPCOMING COURSES STYLES ============== */
@@ -3760,6 +4008,81 @@ const GlobalStyles = () => (
             font-size: 1.2rem;
         }
 
+        /* ProLearn Card Mobile */
+        .prolearn-content {
+            grid-template-columns: 1fr;
+            min-height: auto;
+        }
+
+        .prolearn-text {
+            padding: 40px 30px;
+            order: 2;
+        }
+
+        .prolearn-visual {
+            order: 1;
+        }
+
+        .prolearn-visual img {
+            border-radius: 20px 20px 0 0;
+            height: 300px;
+        }
+
+        .prolearn-heading {
+            font-size: 2rem;
+        }
+
+        .prolearn-stats {
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+        }
+
+        /* About Section Mobile */
+        .about-title {
+            font-size: 2.2rem;
+        }
+        
+        .about-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .about-main-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .about-image-wrapper img {
+            height: 450px;
+        }
+        
+        .about-content-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .stats-wrapper {
+            gap: 40px;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .stat-box {
+            min-width: auto;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+        }
+
         .hero {
             padding: 60px 20px;
             min-height: 60vh;
@@ -3815,6 +4138,7 @@ const GlobalStyles = () => (
     @media (min-width: 768px) {
         .about-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
         }
         .footer-grid {
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -5298,31 +5622,50 @@ const Hero = () => (
 
 // ============== ABOUT COMPONENT ==============
 const About = () => (
-  <section id="about" className="about">
-    <div className="container">
-      <h2>ABOUT INSTITUTE OF GLOBAL TECHNOLOGY</h2>
-      <p className="section-subtitle">Discover our mission, vision, and values that guide us in providing exceptional technology education</p>
-      <div className="about-grid">
-        <div className="about-image">
-          <LazyImage src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Institute of Global Technology Campus" priority={true} />
+  <section id="about" className="about-section">
+    <div className="about-container">
+      <div className="about-header">
+        <h2 className="about-title">ABOUT INSTITUTE OF GLOBAL TECHNOLOGY</h2>
+        <p className="about-subtitle">Discover our mission, vision, and values that guide us in providing exceptional technology education</p>
+        <div className="about-golden-line"></div>
+      </div>
+      
+      <div className="about-main-content">
+        <div className="about-image-section">
+          <div className="about-image-wrapper">
+            <LazyImage 
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+              alt="Graduates throwing caps at Institute of Global Technology" 
+              priority={true} 
+            />
+          </div>
+          <div className="about-statistics">
+            <div className="about-accreditation">
+              <p className="accreditation-text">ACCREDITED BY AIAB EUROPE</p>
+            </div>
+            <div className="stats-wrapper">
+              <div className="stat-box">
+                <div className="stat-number">6000+</div>
+                <div className="stat-label">STUDENTS</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-number">300+</div>
+                <div className="stat-label">FACULTY</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-number">60+</div>
+                <div className="stat-label">PROGRAMS</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="about-content">
-          <h3>Transforming Technology Education Since 2005</h3>
-          <p>The Institute of Global Technology was established with a vision to create a center of excellence in technology education that caters to the evolving needs of industry and society. Over the years, we have grown into a premier institution known for our academic rigor, innovative pedagogy, and commitment to student success.</p>
-          <p>Our campus provides a vibrant learning environment with state-of-the-art facilities, experienced faculty, and numerous opportunities for research and professional development in emerging technologies.</p>
-          <p className="accredited-text">ACCREDITED BY AIAB EUROPE</p>
-          <div className="stats-container">
-            <div className="stat-item">
-              <div className="number">6000+</div>
-              <div className="label">STUDENTS</div>
-            </div>
-            <div className="stat-item">
-              <div className="number">300+</div>
-              <div className="label">FACULTY</div>
-            </div>
-            <div className="stat-item">
-              <div className="number">60+</div>
-              <div className="label">PROGRAMS</div>
+        
+        <div className="about-text-section">
+          <div className="about-content-wrapper">
+            <h3 className="about-content-title">Transforming Technology Education Since 2005</h3>
+            <div className="about-paragraphs">
+              <p className="about-text">The Institute of Global Technology was established with a vision to create a center of excellence in technology education that caters to the evolving needs of industry and society. Over the years, we have grown into a premier institution known for our academic rigor, innovative pedagogy, and commitment to student success.</p>
+              <p className="about-text">Our campus provides a vibrant learning environment with state-of-the-art facilities, experienced faculty, and numerous opportunities for research and professional development in emerging technologies.</p>
             </div>
           </div>
         </div>
@@ -6215,44 +6558,62 @@ const AcademicPrograms = () => {
 
 // ============== OUR SERVICES COMPONENT ==============
 const OurServices = () => {
-    const navigate = useNavigate();
-    
     return (
     <section id="our-services" className="our-services">
         <div className="container">
             <h2>Our Services</h2>
             <p className="section-subtitle">Comprehensive educational services designed to empower your learning journey</p>
-            <div className="programs-grid">
-                <div className="program-card">
-                    <div className="program-visual">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="ProLearn" />
-                    </div>
-                    <div className="program-content">
-                        <h4>ProLearn</h4>
-                        <p>Learn from the Subject Matter Experts. Connect with subject matter experts and academics in cutting-edge fields. <strong>Gain practical knowledge</strong> through hands-on demonstrations and real-world exercises.</p>
-                        <button className="btn btn-details" onClick={() => {
-                            const returnUrl = encodeURIComponent(window.location.origin);
-                            const newWindow = window.open(`https://prolearn.org.in/?return=${returnUrl}`, '_blank');
-                            
-                            // Store reference for potential back navigation
-                            if (newWindow) {
-                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
-                                sessionStorage.setItem('externalWindow', 'prolearn');
-                            }
-                        }}>Details</button>
-                        <div className="program-info">
-                            <div className="info-item">
-                                <i className="fas fa-users"></i>
-                                <span>10,000+ Active Learners</span>
+            <div className="prolearn-container">
+                <div className="prolearn-card">
+                    <div className="prolearn-content">
+                        <div className="prolearn-text">
+                            <h3 className="prolearn-heading">
+                                Learn from the <span className="prolearn-highlight">Subject Matter Experts</span>
+                            </h3>
+                            <p className="prolearn-description">
+                                Connect with subject matter experts and academics in cutting-edge fields. <strong>Gain practical knowledge</strong> through hands-on demonstrations and real-world exercises.
+                            </p>
+                            <div className="prolearn-stats">
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-users"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">10,000+</div>
+                                        <div className="stat-label">Active Learners</div>
+                                    </div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-book"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">100+</div>
+                                        <div className="stat-label">Expert Courses</div>
+                                    </div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-award"></i>
+                                    </div>
+                                    <div className="stat-content">
+                                        <div className="stat-number">95%</div>
+                                        <div className="stat-label">Success Rate</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="info-item">
-                                <i className="fas fa-book"></i>
-                                <span>100+ Expert Courses</span>
-                            </div>
-                            <div className="info-item">
-                                <i className="fas fa-award"></i>
-                                <span>95% Success Rate</span>
-                            </div>
+                            <button className="prolearn-btn" onClick={() => {
+                                const returnUrl = encodeURIComponent(window.location.origin);
+                                const newWindow = window.open(`https://prolearn.org.in/?return=${returnUrl}`, '_blank');
+                                
+                                if (newWindow) {
+                                    sessionStorage.setItem('igtReturnUrl', window.location.origin);
+                                    sessionStorage.setItem('externalWindow', 'prolearn');
+                                }
+                            }}>Explore ProLearn</button>
+                        </div>
+                        <div className="prolearn-visual">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="ProLearn Collaborative Learning" />
                         </div>
                     </div>
                 </div>

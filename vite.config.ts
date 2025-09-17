@@ -45,7 +45,7 @@ export default defineConfig({
     reportCompressedSize: false,
   },
   publicDir: 'public',
-  base: './',
+  base: '/',
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom']
   }

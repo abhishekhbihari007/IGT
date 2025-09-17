@@ -229,3 +229,18 @@ body {
     .apply-page .review-row { grid-template-columns: 1fr; text-align: center; }
     .apply-page .review-label { font-weight: bold; }
 }
+
+/* --- ERROR STYLES --- */
+.form-input.error,
+.form-select.error {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    font-weight: 500;
+}

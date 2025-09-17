@@ -495,11 +495,13 @@ const GlobalStyles = () => (
     
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
+            justify-items: center;
         }
+        
     
     .feature-item {
         background: #ffffff;
@@ -554,6 +556,13 @@ const GlobalStyles = () => (
     }
 
     /* ============== RESPONSIVE STYLES FOR WHY CHOOSE US ============== */
+    @media (max-width: 1024px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+    }
+    
     @media (max-width: 768px) {
         .features-grid {
             grid-template-columns: 1fr;
@@ -1112,6 +1121,21 @@ const GlobalStyles = () => (
         border-radius: 12px 12px 0 0;
         position: relative;
         flex-shrink: 0;
+        will-change: transform;
+    }
+    
+    .lazy-image {
+        will-change: opacity;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+    
+    .lazy-image.loaded {
+        opacity: 1;
+    }
+    
+    .lazy-image.loading {
+        opacity: 0;
     }
     
     .lazy-image-container img {
@@ -1932,11 +1956,11 @@ const GlobalStyles = () => (
     
     .programs-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 15px;
         max-width: 1200px;
         margin: 0 auto;
-        justify-items: center;
+        justify-items: stretch;
         padding: 0 20px;
     }
     
@@ -1950,9 +1974,10 @@ const GlobalStyles = () => (
         border-top: 4px solid #D32F2F;
         width: 100%;
         height: 100%;
-        min-height: 500px;
+        min-height: 420px;
         display: flex;
         flex-direction: column;
+        align-self: stretch;
     }
     
     .program-card:hover {
@@ -1962,7 +1987,7 @@ const GlobalStyles = () => (
     
     .program-visual {
         position: relative;
-        height: 200px;
+        height: 180px;
         overflow: hidden;
     }
     
@@ -1973,7 +1998,7 @@ const GlobalStyles = () => (
     }
     
     .program-content {
-        padding: 20px;
+        padding: 18px;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -1981,33 +2006,33 @@ const GlobalStyles = () => (
     }
     
     .program-content h4 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         font-weight: 700;
         color: #212529;
-        margin: 0 0 15px 0;
+        margin: 0 0 12px 0;
         line-height: 1.3;
-        min-height: 2.5em;
+        min-height: 2.2em;
     }
     
     .program-content p {
         color: #495057;
-        margin-bottom: 25px;
-        line-height: 1.7;
-        font-size: 0.95rem;
+        margin-bottom: 18px;
+        line-height: 1.6;
+        font-size: 0.9rem;
         flex-grow: 1;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     
     .btn-details {
         background: #D32F2F;
         color: white;
         border: 2px solid #D32F2F;
-        padding: 10px 20px;
-        border-radius: 20px;
+        padding: 8px 16px;
+        border-radius: 18px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         width: 100%;
         font-size: 0.9rem;
         box-sizing: border-box;
@@ -2071,9 +2096,9 @@ const GlobalStyles = () => (
     .program-info {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-        margin-bottom: 20px;
-        padding: 15px 0;
+        gap: 12px;
+        margin-bottom: 15px;
+        padding: 12px 0;
         border-top: 1px solid #f0f0f0;
         border-bottom: 1px solid #f0f0f0;
         flex-shrink: 0;
@@ -2082,8 +2107,8 @@ const GlobalStyles = () => (
     .info-item {
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 0.85rem;
+        gap: 8px;
+        font-size: 0.8rem;
         color: #495057;
         font-weight: 500;
         justify-content: center;
@@ -2091,7 +2116,7 @@ const GlobalStyles = () => (
     
     .info-item i {
         color: #D32F2F;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     /* ============== UPCOMING COURSES STYLES ============== */
@@ -3684,8 +3709,31 @@ const GlobalStyles = () => (
         }
         .program-cards-grid, .courses-grid, .research-grid, .events-grid, .department-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 15px;
             justify-items: stretch;
+        }
+        
+        /* Academic programs grid mobile spacing */
+        .programs-grid {
+            justify-items: stretch;
+        }
+        
+        /* Make program cards match course cards on mobile */
+        .programs-grid .program-card,
+        .program-cards-grid .program-card {
+            max-width: 400px;
+            min-height: auto;
+            height: fit-content;
+        }
+        
+        /* Make Why Choose Us feature cards match course cards on mobile */
+        .features-grid {
+            justify-items: center;
+        }
+        
+        .features-grid .feature-item {
+            max-width: 400px;
+            width: 100%;
         }
         .category-header h3 {
             font-size: 2rem;
@@ -5250,7 +5298,7 @@ const About = () => (
       <p className="section-subtitle">Discover our mission, vision, and values that guide us in providing exceptional technology education</p>
       <div className="about-grid">
         <div className="about-image">
-          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Institute of Global Technology Campus" />
+          <LazyImage src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Institute of Global Technology Campus" priority={true} />
         </div>
         <div className="about-content">
           <h3>Transforming Technology Education Since 2005</h3>
@@ -5284,42 +5332,42 @@ const WhyChooseUs = () => (
       <h2>Why Choose Us<span className="question-mark">?</span></h2>
       <div className="features-grid">
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Industrial Partners" />
+          <LazyImage src="https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Industrial Partners" />
           <div className="feature-content">
             <h3>100+ Industrial Partners</h3>
             <p>Strong collaborations with leading technology companies for research and placements.</p>
           </div>
         </div>
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Expert Faculty" />
+          <LazyImage src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Expert Faculty" />
           <div className="feature-content">
             <h3>Learn from Experts</h3>
             <p>Instruction from national and international experts in their respective fields.</p>
           </div>
         </div>
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Placement Support" />
+          <LazyImage src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Placement Support" />
           <div className="feature-content">
             <h3>Placement Assistance</h3>
             <p>Complete placement support with career counseling and interview preparation.</p>
           </div>
         </div>
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Advanced Research" />
+          <LazyImage src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Advanced Research" />
           <div className="feature-content">
             <h3>Advanced Research</h3>
             <p>Opportunities to work on innovative research projects with commercialization potential.</p>
           </div>
         </div>
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Entrepreneurship Support" />
+          <LazyImage src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Entrepreneurship Support" />
           <div className="feature-content">
             <h3>Entrepreneurship Support</h3>
             <p>Incubation center and mentorship for student startups and innovations.</p>
           </div>
         </div>
         <div className="feature-item">
-          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Technology Innovation" />
+          <LazyImage src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Technology Innovation" />
           <div className="feature-content">
             <h3>Technology Innovation</h3>
             <p>Cutting-edge facilities and labs for hands-on learning and experimentation.</p>
@@ -5660,7 +5708,6 @@ const ProgramsPage = () => {
                 <h3>Ready to take the next step?</h3>
                 <p>Our admissions team is here to help you through every step of the process.</p>
                 <button className="details-btn btn-red-cta" onClick={() => window.location.href = '/contact'}>Contact Admissions</button>
-                <button className="details-btn btn-secondary" onClick={() => window.location.href = '/tour'}>Schedule Campus Tour</button>
             </div>
             
 
@@ -5754,7 +5801,6 @@ const AdmissionsPage = () => {
                         <h3>Ready to take the next step?</h3>
                         <p>Our admissions team is here to help you through every step of the process.</p>
                         <button className="details-btn btn-red-cta" onClick={() => window.location.href = '/contact'}>Contact Admissions</button>
-                        <button className="details-btn btn-secondary" onClick={() => window.location.href = '/tour'}>Schedule Campus Tour</button>
                     </div>
                 </div>
             </div>
@@ -6098,14 +6144,7 @@ const AcademicPrograms = () => {
                         <h4>EU ACC Master Program in AR & VR Technology</h4>
                         <p>Explore the Future of Immersive Technology through advanced augmented and virtual reality applications. Develop skills in 3D modeling, spatial computing, and interactive design.</p>
                         <button className="btn btn-details" onClick={() => {
-                            const returnUrl = encodeURIComponent(window.location.origin);
-                            const newWindow = window.open(`https://igt-red.vercel.app/?return=${returnUrl}`, '_blank');
-                            
-                            // Store reference for potential back navigation
-                            if (newWindow) {
-                                sessionStorage.setItem('igtReturnUrl', window.location.origin);
-                                sessionStorage.setItem('externalWindow', 'ar-vr-tech');
-                            }
+                            window.location.href = '/program/ar-vr-technology';
                         }}>Details</button>
                         <div className="program-info">
                             <div className="info-item">
@@ -6275,10 +6314,6 @@ const UpcomingCourses = () => (
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div className="view-all-courses">
-                <button className="btn-view-all">View All Upcoming Courses</button>
             </div>
         </div>
     </section>

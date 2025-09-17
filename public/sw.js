@@ -1,4 +1,4 @@
-const CACHE_NAME = 'igt-website-v2.0.0';
+const CACHE_NAME = 'igt-website-v2.1.0';
 const urlsToCache = [
   '/',
   '/images/precision-agriculture.webp',

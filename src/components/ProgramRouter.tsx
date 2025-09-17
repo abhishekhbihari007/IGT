@@ -43,6 +43,7 @@ import PrecisionAgricultureProgram from './programs/PrecisionAgricultureProgram'
 import AIManagementStudiesProgram from './programs/AIManagementStudiesProgram';
 import DoctoralPrograms from './programs/DoctoralPrograms';
 import PostdoctoralPrograms from './programs/PostdoctoralPrograms';
+import ARVRTechnologyProgram from './programs/ARVRTechnologyProgram';
 // import ProLearnProgram from './programs/ProLearnProgram'; // Removed - using external link
 
 const ProgramRouter: React.FC = () => {
@@ -98,7 +99,7 @@ const ProgramRouter: React.FC = () => {
     
     // Homepage Specific Programs
     'ai-management-certificate': AIManagementCertificateProgram,
-    // 'ar-vr-technology': ARVRTechnologyProgram, // Removed - using external link
+    'ar-vr-technology': ARVRTechnologyProgram,
     
     // Doctoral & Postdoctoral Programs
     'doctoral-programs': DoctoralPrograms,
